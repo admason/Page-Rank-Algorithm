@@ -20,30 +20,9 @@ Google Page-Rank Algorithm for sorting web pages
 ## Link vectors:
 [![linkvect.jpg](https://i.postimg.cc/pdhTjw1X/linkvect.jpg)](https://postimg.cc/GBRdw5CZ)
 
+### Normalisation of the vectors involves division by the sum of the link vector elements.
 
-### Link vector A
-
-$L_{A}= \begin{bmatrix}
-0 & 1 & 1 & 1\\
-\end{bmatrix}$
-#### Whereby page A has a link to B, C and D.
-
-### Link vector B
-$L_{B}= \begin{bmatrix}
-1 & 0 & 0 & 1\\
-\end{bmatrix}$
-#### Whereby page B has a link to A and D.
-
-### Link vectors C and D
-$L_{C}= \begin{bmatrix}
-0 & 0 & 0 & 1\\
-\end{bmatrix}
-\\
-L_{D}= \begin{bmatrix}
-0 & 1 & 1 & 0\\
-\end{bmatrix}$
-
-### Normalisation of the vectors involves divion by the sum of the element.
+[![znorm.jpg](https://i.postimg.cc/BbY9M6jW/znorm.jpg)](https://postimg.cc/rRrPpqGg)
 $L_{A}= \begin{bmatrix}
 0 & 1 & 1 & 1\\
 \end{bmatrix}  =  \begin{bmatrix}
