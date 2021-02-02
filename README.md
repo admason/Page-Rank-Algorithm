@@ -22,7 +22,7 @@ Google Page-Rank Algorithm for sorting web pages
 
 ### Normalisation of the vectors involves division by the sum of the link vector elements.
 
-[![znorm.jpg](https://i.postimg.cc/BbY9M6jW/znorm.jpg)](https://postimg.cc/rRrPpqGg)
+[![znorm.jpg](https://i.postimg.cc/Y9RJC9f4/znorm.jpg)](https://postimg.cc/MMcsszLx)
 $L_{A}= \begin{bmatrix}
 0 & 1 & 1 & 1\\
 \end{bmatrix}  =  \begin{bmatrix}
