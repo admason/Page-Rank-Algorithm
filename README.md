@@ -18,6 +18,9 @@ Google Page-Rank Algorithm for sorting web pages
 #### In order that the probability for a page hit we normalise the vectors.
 
 ## Link vectors:
+[![linkvect.jpg](https://i.postimg.cc/pdhTjw1X/linkvect.jpg)](https://postimg.cc/GBRdw5CZ)
+
+
 ### Link vector A
 
 $L_{A}= \begin{bmatrix}
