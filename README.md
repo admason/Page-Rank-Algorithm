@@ -16,11 +16,7 @@ Google Page-Rank Algorithm for sorting web pages
 #### The porbability that a page is accessed at random is guaged and will give a measure of the pages popularity.
 #### The links are described as a vector, each with a value of 1 for the presence of a link and 0 for absence of a link.
 #### In order that the probability for a page hit we normalise the vectors.
-\begin{aligned}
-\dot{x} & = \sigma(y-x) \\
-\dot{y} & = \rho x - y - xz \\
-\dot{z} & = -\beta z + xy
-\end{aligned}
+
 ## Link vectors:
 ### Link vector A
 
@@ -73,3 +69,29 @@ L_{D}= \begin{bmatrix}
 \frac{1}{3} & 0 & 0 & \frac{1}{2}\\
 \frac{1}{3} & \frac{1}{2} & 1 & 0\\
 \end{bmatrix}$
+
+
+
+
+### The process is repeated until a stable result is found.
+#### Essentially the following summation is employed:
+$
+R_{A} = \sum_{j=1}^{n}  L_{a}jM_{j}\   
+\\
+\\
+n\in \mathbb{N}
+$
+#### Where j is the number of webpages and n is number of iterations
+
+#### The rank of A is the sum of the ranks of all the pages which are liked to it, weighted by their specific link probability taken from the matrix L.
+$
+M=L \cdot r
+$
+
+#### By iteration: 
+#### Initial step:             $r^{i}=L\cdot r$
+#### Subsequently:       $r^{i+1}=L\cdot r^{i}$
+
+#### Since $L\vec{x}=\lambda\vec{x}$
+#### So, $\lambda = r$, which is the eigenvalue of 1
+#### And $\vec{r}$ is the eigenvector of matrix L.
