@@ -1,5 +1,6 @@
 # Page-Rank-Algorithm
 Google Page-Rank Algorithm for sorting web pages
+## Built on Jupyter notebook.
 
 # Page Rank Algorithm
 ## Orders the popularity of web page search results
@@ -17,7 +18,7 @@ Google Page-Rank Algorithm for sorting web pages
 #### The links are described as a vector, each with a value of 1 for the presence of a link and 0 for absence of a link.
 #### In order that the probability for a page hit we normalise the vectors.
 
-## Link vectors:
+
 [![linkvect.jpg](https://i.postimg.cc/pdhTjw1X/linkvect.jpg)](https://postimg.cc/GBRdw5CZ)
 
 ### Normalisation of the vectors involves division by the sum of the link vector elements.
@@ -100,3 +101,92 @@ r
 [![zresult.jpg](https://i.postimg.cc/N0CQdpSC/zresult.jpg)](https://postimg.cc/5Hvc0qx8)
 
 
+# Full Python Code:
+```
+#importing libraries
+import numpy as np
+import numpy.linalg as la
+
+# Link Matrix
+#Build Link Matrix
+
+L = np.array([[0,   1/2, 0,  0   ],
+              [1/3, 0,   0,  1/2 ],
+              [1/3, 0,   0,  1/2 ],
+              [1/3, 1/2, 1,  0 ]])
+              
+# Initial vector r,
+# Multiplied by 100 in order to gain percentage probabilty
+r = 100*np.ones(4)/4   # Set the vector with 4 entries of 1/4 x100 each
+r      
+
+# Performing the first iteration, multiply matrix L with vector r
+r = L @ r  # applies link matrix to r
+r #this is the rank vector after first iteration
+
+# To update the value of r, keep repeating 
+r = L @ r 
+r
+
+# We repeat using a loop
+r=100*np.ones(4)/4
+for i in np.arange(100):
+    r=L@r
+r
+
+# Best Probabilty:
+round(np.max(r),2)
+
+# We may run the code until a specific condition is met, such as tolerance
+r =  100*np.ones(4)/4
+lastR = r  #set to equal initial r
+r = L@r
+i = 0      # counting variable
+while la.norm(lastR - r)> 0.01:
+    lastR = r
+    r = L@r
+    i += 1
+    print(r)
+print(str(i)+" is number of iterations for convergence")
+r
+
+
+
+#######################################
+#Lets take a new case with 6 pages
+
+M = np.array([[0,   1/2, 1/3, 0, 0,    0 ],
+              [1/3, 0,   0,   0, 1/2, 1/3],
+              [1/3, 1/2, 0,   1, 0,   0 ],
+              [1/3, 0,   1/3, 0, 1/2, 1/3 ],
+              [0,   0,   0,   0, 0,   1/3 ],
+              [0,   0,   1/3, 0, 0,   0 ]])
+              
+              
+r=100*np.ones(6)/6
+lastR = r
+r =M@r
+i =0
+while la.norm(lastR - r)>0.01:
+    lastR = r
+    r= M@r
+    i +=1
+    print(r)
+print(str(i) + "iterations for convergence to give vector r")
+r
+
+# A=17%, B=11%,C=34%,D=22%,E=4%,F=11%
+m=round(max(r),1)
+print("maximum % is "+str(m)+" %")
+
+r[0:6] 
+
+toppage=np.where(r==max(r))
+top =str(toppage)
+print("Page number {} with {}% hit pobability".format(top,m))
+
+
+```
+
+## Improvements
+#### Develop the code to adapt to any number of pages.
