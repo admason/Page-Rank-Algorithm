@@ -60,3 +60,43 @@ r #this is the rank vector after first iteration
 
 
 [![zeig.jpg](https://i.postimg.cc/2Svj8QqV/zeig.jpg)](https://postimg.cc/QF8ZfWJ3)
+
+```
+# To update the value of r, keep repeating 
+r = L @ r 
+r
+```
+
+## While loop.
+### Introduce a while loop to iterate 100 times
+```
+# We repeat using a loop
+r=100*np.ones(4)/4
+for i in np.arange(100):
+    r=L@r
+r
+```
+#### The final iteration of r denotes the probabilty of hitting each page during the 100 cloop experiment.
+#### The user spends 12% in page A, 24% in page B and 24% in C, then 40% in D
+```
+# Best Probabilty:
+round(np.max(r),2)
+```
+### Running the while loop until a a specific condition is met, such as a tolerance level
+```
+# We may run the code until a specific condition is met, such as tolerance
+r =  100*np.ones(4)/4
+lastR = r  #set to equal initial r
+r = L@r
+i = 0      # counting variable
+while la.norm(lastR - r)> 0.01:
+    lastR = r
+    r = L@r
+    i += 1
+    print(r)
+print(str(i)+" is number of iterations for convergence")
+r
+```
+[![zresult.jpg](https://i.postimg.cc/N0CQdpSC/zresult.jpg)](https://postimg.cc/5Hvc0qx8)
+
+
