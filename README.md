@@ -50,26 +50,13 @@ L = np.array([[0,   1/2, 0,  0   ],
 r = 100*np.ones(4)/4   # Set the vector with 4 entries of 1/4 x100 each
 r    
 ```
+[![zrank.jpg](https://i.postimg.cc/RVhN9JQH/zrank.jpg)](https://postimg.cc/svFV4XLj)
 
-### The process is repeated by iteration until a stable result is found.
-#### Essentially the following summation is employed:
-$
-R_{A} = \sum_{j=1}^{n}  L_{a}jM_{j}\   
-\\
-\\
-n\in \mathbb{N}
-$
-#### Where j is the number of webpages and n is number of iterations
+```
+# Performing the first iteration, multiply matrix L with vector r
+r = L @ r  # applies link matrix to r
+r #this is the rank vector after first iteration
+```
 
-#### The rank of A is the sum of the ranks of all the pages which are liked to it, weighted by their specific link probability taken from the matrix L.
-$
-M=L \cdot r
-$
 
-#### By iteration: 
-#### Initial step:             $r^{i}=L\cdot r$
-#### Subsequently:       $r^{i+1}=L\cdot r^{i}$
-
-#### Since $L\vec{x}=\lambda\vec{x}$
-#### So, $\lambda = r$, which is the eigenvalue of 1
-#### And $\vec{r}$ is the eigenvector of matrix L.
+[![zeig.jpg](https://i.postimg.cc/2Svj8QqV/zeig.jpg)](https://postimg.cc/QF8ZfWJ3)
