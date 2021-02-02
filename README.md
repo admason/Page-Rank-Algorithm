@@ -23,39 +23,35 @@ Google Page-Rank Algorithm for sorting web pages
 ### Normalisation of the vectors involves division by the sum of the link vector elements.
 
 [![znorm.jpg](https://i.postimg.cc/Y9RJC9f4/znorm.jpg)](https://postimg.cc/MMcsszLx)
-$L_{A}= \begin{bmatrix}
-0 & 1 & 1 & 1\\
-\end{bmatrix}  =  \begin{bmatrix}
-0 & \frac{1}{3} & \frac{1}{3} & \frac{1}{3}\\
-\end{bmatrix}
-\\
-L_{B}= \begin{bmatrix}
-1 & 0 & 0 & 1\\
-\end{bmatrix}  =\begin{bmatrix} \frac{1}{2} & 0 & 0 & \frac{1}{2}\\
-\end{bmatrix}
-\\
-L_{C}= \begin{bmatrix}
-0 & 0 & 0 & 1\\
-\end{bmatrix}  =\begin{bmatrix}0 & 0 & 0 & 1\\
-\end{bmatrix}
-\\
-L_{D}= \begin{bmatrix}
-0 & 1 & 1 & 0\\
-\end{bmatrix}=\begin{bmatrix}0 & \frac{1}{2} & \frac{1}{2} & 0\\
-\end{bmatrix}$
-\\
-#### The normalised vectors are then placed as column in Link matrix:
-#### The link matrix L=  $\begin{bmatrix}
-0 & \frac{1}{2} & 0 & 0\\
-\frac{1}{3} & 0 & 0 & \frac{1}{2}\\
-\frac{1}{3} & 0 & 0 & \frac{1}{2}\\
-\frac{1}{3} & \frac{1}{2} & 1 & 0\\
-\end{bmatrix}$
 
 
+## Python code:
+```
+#importing libraries
+import numpy as np
+import numpy.linalg as la
+```
+```
+# Link Matrix
+#Build Link Matrix
 
+L = np.array([[0,   1/2, 0,  0   ],
+              [1/3, 0,   0,  1/2 ],
+              [1/3, 0,   0,  1/2 ],
+              [1/3, 1/2, 1,  0 ]])
+```
 
-### The process is repeated until a stable result is found.
+#### As an iteration loop will be administered then an initial vector will be required, where each element denotes it's probability of selection first. A network of four pages will give the probabilities for each page:
+[![initr.jpg](https://i.postimg.cc/fTcgzkzM/initr.jpg)](https://postimg.cc/dL09nsZf)
+
+```
+# Initial vector r,
+# Multiplied by 100 in order to gain percentage probabilty
+r = 100*np.ones(4)/4   # Set the vector with 4 entries of 1/4 x100 each
+r    
+```
+
+### The process is repeated by iteration until a stable result is found.
 #### Essentially the following summation is employed:
 $
 R_{A} = \sum_{j=1}^{n}  L_{a}jM_{j}\   
