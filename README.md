@@ -5,7 +5,7 @@ Google Page-Rank Algorithm for sorting web pages
 ## Orders the popularity of web page search results
 ### First we create a Model for a mini internet which is composed of 4 web pages; A, B, C and D.
 ### The folowing graph illustrates our model:
-![image.png](attachment:image.png)
+[![pages.jpg](https://i.postimg.cc/6TJT6Yh5/pages.jpg)](https://postimg.cc/XBLnQKhT)
 ### Each node denotes a webpage, each edge denotes a web link from one page to another.
 ### So page B conatins two links, one link to A and the other link to D.
 ### We ignore any self referencing links.
