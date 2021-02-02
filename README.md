@@ -19,6 +19,8 @@ Google Page-Rank Algorithm for sorting web pages
 
 ## Link vectors:
 ### Link vector A
+```
+math
 $L_{A}= \begin{bmatrix}
 0 & 1 & 1 & 1\\
 \end{bmatrix}$
@@ -38,7 +40,7 @@ $L_{C}= \begin{bmatrix}
 L_{D}= \begin{bmatrix}
 0 & 1 & 1 & 0\\
 \end{bmatrix}$
-
+```
 ### Normalisation of the vectors involves divion by the sum of the element.
 $L_{A}= \begin{bmatrix}
 0 & 1 & 1 & 1\\
