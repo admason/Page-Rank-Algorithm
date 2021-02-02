@@ -16,11 +16,14 @@ Google Page-Rank Algorithm for sorting web pages
 #### The porbability that a page is accessed at random is guaged and will give a measure of the pages popularity.
 #### The links are described as a vector, each with a value of 1 for the presence of a link and 0 for absence of a link.
 #### In order that the probability for a page hit we normalise the vectors.
-
+\begin{aligned}
+\dot{x} & = \sigma(y-x) \\
+\dot{y} & = \rho x - y - xz \\
+\dot{z} & = -\beta z + xy
+\end{aligned}
 ## Link vectors:
 ### Link vector A
-```
-math
+
 $L_{A}= \begin{bmatrix}
 0 & 1 & 1 & 1\\
 \end{bmatrix}$
@@ -40,7 +43,7 @@ $L_{C}= \begin{bmatrix}
 L_{D}= \begin{bmatrix}
 0 & 1 & 1 & 0\\
 \end{bmatrix}$
-```
+
 ### Normalisation of the vectors involves divion by the sum of the element.
 $L_{A}= \begin{bmatrix}
 0 & 1 & 1 & 1\\
