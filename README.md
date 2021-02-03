@@ -43,7 +43,7 @@ L = np.array([[0,   1/2, 0,  0   ],
 ```
 
 #### As an iteration loop will be administered then an initial vector will be required, where each element denotes it's probability of selection first. A network of four pages will give the probabilities for each page:
-[![initr.jpg](https://i.postimg.cc/fTcgzkzM/initr.jpg)](https://postimg.cc/dL09nsZf)
+[![zprob.jpg](https://i.postimg.cc/tCnyZ2V9/zprob.jpg)](https://postimg.cc/RNm221RY)
 
 ```
 # Initial vector r,
