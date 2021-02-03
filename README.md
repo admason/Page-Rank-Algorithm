@@ -3,12 +3,12 @@ Google Page-Rank Algorithm for sorting web pages
 ## Built on Jupyter notebook.
 
 # Page Rank Algorithm
-## Orders the popularity of web page search results
+## Orders the popularity of web page search results by means of webpage hit probability.
 #### First we create a Model for a mini internet which is composed of 4 web pages; A, B, C and D.
 #### The folowing graph illustrates our model:
 [![pages.jpg](https://i.postimg.cc/6TJT6Yh5/pages.jpg)](https://postimg.cc/XBLnQKhT)
 #### Each node denotes a webpage, each edge denotes a web link from one page to another.
-### So page B conatins two links, one link to A and the other link to D.
+### So page B holds two links, one link to A and the other link to D.
 #### We ignore any self referencing links.
 #### We consider only direct links, such as A to D, but not A to B to D.
 
